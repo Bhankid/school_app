@@ -1,10 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const stats = [
-  { number: '2000+', label: 'Students' },
-  { number: '150+', label: 'Expert Teachers' },
-  { number: '50+', label: 'Programs' },
-  { number: '100%', label: 'Success Rate' },
+  { number: 2000, label: "Students", symbol: "+" },
+  { number: 150, label: "Expert Teachers", symbol: "+" },
+  { number: 50, label: "Programs", symbol: "+" },
+  { number: 100, label: "Success Rate", symbol: "%" },
 ];
 
 export default function Stats() {
@@ -20,7 +21,10 @@ export default function Stats() {
               transition={{ delay: index * 0.1 }}
               className="text-center"
             >
-              <h3 className="text-4xl font-bold gradient-text mb-2">{stat.number}</h3>
+              <h3 className="text-4xl font-bold gradient-text mb-2">
+                <CountUp end={stat.number} duration={2} />
+                {stat.symbol}
+              </h3>
               <p className="text-gray-500">{stat.label}</p>
             </motion.div>
           ))}
