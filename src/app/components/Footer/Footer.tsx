@@ -74,13 +74,13 @@ export default function Footer() {
               </p>
               <p className="text-gray-400">
                 <strong className="block">Phone:</strong>
-                +1 (555) 123-4567
+                +233 (554) 57-2904
               </p>
               <p className="text-gray-400">
                 <strong className="block">Address:</strong>
                 123 Innovation Drive
                 <br />
-                Education City, ED 12345
+                Education City, ED 12345 Accra
               </p>
             </div>
           </div>

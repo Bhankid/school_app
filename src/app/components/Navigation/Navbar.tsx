@@ -4,7 +4,14 @@ import { navItems } from "./NavItems";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 md:w-auto w-[90%] z-50 md:top-6 lg:top-8">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 md:w-auto w-[90%] z-50 md:top-6 lg:top-8 flex justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-xl font-bold text-blue-600 gradient-text mr-8"
+      >
+        Modern School
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
