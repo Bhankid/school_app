@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 [data-theme='dark'] {
@@ -14,88 +15,67 @@
   --background-end-rgb: 0, 0, 0;
 }
 
-@keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(20px, -20px) scale(1.1);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  75% {
-    transform: translate(20px, 20px) scale(1.1);
-  }
-}
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
 body {
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.1),
-    rgba(147, 51, 234, 0.1),
-    rgba(236, 72, 153, 0.1)
-  );
-  min-height: 100vh;
-  overflow-x: hidden;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .dark body {
-  background: linear-gradient(
-    135deg,
-    rgba(59, 130, 246, 0.05),
-    rgba(147, 51, 234, 0.05),
-    rgba(236, 72, 153, 0.05)
-  );
+  background: linear-gradient(135deg,
+      rgba(13, 14, 16, 0.959),
+      rgba(23, 1, 1, 0.833),
+      rgba(6, 1, 40, 0.934));
 }
 
+/* Glassmorphism */
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.212);
+  backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
 }
 
 .dark .glass-morphism {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #3B82F6, #9333EA, #EC4899);
+  background: linear-gradient(135deg, #1960d4, #e11a1a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dark .gradient-text {
-  background: linear-gradient(135deg, #60A5FA, #A855F7, #F472B6);
+  /* Set the gradient as the background */
+  background: linear-gradient(135deg, #1960d4, #e11a1a);
+
+  /* Ensure the gradient is applied to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the text color transparent so the gradient shows through */
+  color: transparent;
 }
 
+/* Gradient Border */
 .gradient-border {
   position: relative;
 }
@@ -105,24 +85,19 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  padding: 2px;
-  background: linear-gradient(135deg, #3B82F6, #9333EA, #EC4899);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  padding: 4px;
+   background: linear-gradient(135deg, #1960d4, #e11a1a);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
 
 .dark .gradient-border::before {
-  background: linear-gradient(135deg, #60A5FA, #A855F7, #F472B6);
+   background: linear-gradient(135deg, #1960d4, #e11a1a);
 }
 
-/* Parallax Effect */
-.parallax {
-  transition: transform 0.1s ease-out;
-  will-change: transform;
-}

@@ -21,7 +21,7 @@ export default function Stats() {
               className="text-center"
             >
               <h3 className="text-4xl font-bold gradient-text mb-2">{stat.number}</h3>
-              <p className="text-gray-600">{stat.label}</p>
+              <p className="text-gray-500">{stat.label}</p>
             </motion.div>
           ))}
         </div>
