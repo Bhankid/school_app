@@ -15,9 +15,9 @@ export default function MobileMenu({ setIsMenuOpen }: MobileMenuProps) {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: "100%", opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed bottom-4 right-4 md:hidden z-50"
+        className="fixed bottom-4 left-0 right-0 mx-auto md:hidden z-50 w-screen"
       >
-        <div className="glass-morphism p-4 rounded-full flex gap-6 shadow-lg">
+        <div className="glass-morphism p-4 rounded-full flex gap-6 shadow-lg mx-auto w-max">
           {navItems.map((item) => (
             <Link
               key={item.name}

@@ -8,14 +8,14 @@ export default function Navbar() {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-xl font-bold text-blue-600 gradient-text mr-8"
+        className="text-xl font-bold text-blue-600 gradient-text mr-4 mt-4 whitespace-nowrap"
       >
         Modern School
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass-morphism rounded-full px-8 py-4 gap-8 items-center hidden md:flex" // Hide on mobile
+        className="glass-morphism rounded-full px-8 py-4 gap-8 items-center hidden md:flex mx-auto"
       >
         {navItems.map((item) => (
           <Link
