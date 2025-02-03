@@ -89,7 +89,7 @@ export default function About() {
           transition={{ delay: 0.6 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
             <h2 className="text-2xl font-semibold text-blue-600 mb-4">
               Our Mission
             </h2>
@@ -98,7 +98,7 @@ export default function About() {
               creativity, critical thinking, and global awareness.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
+          <div className="bg-white p-8 rounded-2xl shadow-lg transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
             <h2 className="text-2xl font-semibold text-blue-600 mb-4">
               Our Vision
             </h2>
